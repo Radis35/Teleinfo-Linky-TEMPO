@@ -156,7 +156,7 @@ Vous devriez voir apparaitre ceci :
 ## Créer et lancer un service
 Ici nous allons faire en sorte que le script Python se lance tout seul au démarrage.
 
-Pour cela vous devez copier le fichier `linky.service` (en ayant pris soin de le configurer en fonction de votre dossier de travail) dans le dossier `/etc/systemd/system'
+Pour cela vous devez copier le fichier `linky.service` (en ayant pris soin de le configurer en fonction de votre dossier de travail) dans le dossier `/etc/systemd/system`
 
 Ensuite il faut recharger le daemon, activer le service et le démarrer
 
@@ -170,7 +170,10 @@ Vérifier ensuite que le service est bien lancer avec la commande :
 ```
 journalctl -u linky
 ```
-
+Vous devriez obtenir un message comme ceci :
+```
+Oct 18 23:48:13 raspberrypi systemd[1]: Started linky.service - Python service fetching Linky and putting data into MySQL.
+```
 
 ## Affichage dans Grafana
 
