@@ -153,4 +153,11 @@ Vous devriez voir apparaitre ceci :
 |                 430 |                     2 | 2023-10-19 13:33:17 |
 +---------------------+-----------------------+---------------------+
 ```
+##Affichage dans Grafana
 
+Grafana est accessible depuis un navigateur web à l'adresse 
+```
+adresse_ip_du_rasp:3000
+```
+
+je vous met un fichier de conf. JSON dans les fichiers pour avoir ce type de graphique (attention à la zone horaire, UTC ici)
