@@ -32,6 +32,37 @@ sudo systemctl disable bluetooth.service
 ```
 Redémarrez.
 
+### Tester le port série
+
+Installer et lancer Picocom :
+```
+sudo apt-get install picocom
+```
+```
+picocom -b 1200 -d 7 -f n /dev/ttyAMA0
+```
+
+Vous devriez voir apparaitre les trames sous ce format : 
+```
+ADCO 031562151396 A
+OPTARIF BBR( S
+ISOUSC 60CJB 052272737 @
+BBRHPJB 049771526 S
+BBRHCJW 000000000 2
+BBRHPJW 000000000 ?
+BBRHCJR 000000000 -
+BBRHPJR 000000000 :
+PTEC HPJB P
+DEMAIN ---- "
+IINST 002 Y
+IMAX 090 H
+PAPP 00520 (
+HHPHC A ,
+MOTDETAT
+```
+
+Pour quitter : Crtl+A puis Ctrl+X
+
 ## Prérequis logiciel : 
 - [Grafana pour archi ARMv6](https://grafana.com/grafana/download/10.1.2?platform=arm)
 - Serveur MariaDB :          
@@ -82,3 +113,44 @@ DB_USER = 'user'  # Remplacez par votre nom d'utilisateur
 DB_PASSWORD = 'password!'  # Remplacez par votre mot de passe
 DB_NAME = 'linky'
 ```
+## Test du programme :
+
+Et voilà vous êtes prêt pour tester le programme, vous pouvez le lancer avec la commande : 
+```
+python3 linky.py
+```
+Vous devriez voir apparaitre les étapes du programme et en arrière plan la base de donnée commence à se charger.
+
+Pour vérifier vous pouvez lancer votre base de donnée dans un autre shell :
+
+```
+sudo mysql
+```
+
+```
+USE linky;
+```
+```
+select * from mesure;
+```
+
+Vous devriez voir apparaitre ceci : 
+```
++---------------------+-----------------------+---------------------+
+| puissance_apparente | intensite_instantee   |     horodatage      |
++---------------------+-----------------------+---------------------+
+|                 520 |                     2 | 2023-10-19 13:31:56 |
+|                 530 |                     2 | 2023-10-19 13:32:03 |
+|                 530 |                     2 | 2023-10-19 13:32:11 |
+|                 530 |                     2 | 2023-10-19 13:32:18 |
+|                 420 |                     2 | 2023-10-19 13:32:25 |
+|                 420 |                     2 | 2023-10-19 13:32:33 |
+|                 430 |                     2 | 2023-10-19 13:32:40 |
+|                 430 |                     2 | 2023-10-19 13:32:47 |
+|                 430 |                     2 | 2023-10-19 13:32:55 |
+|                 430 |                     2 | 2023-10-19 13:33:02 |
+|                 430 |                     2 | 2023-10-19 13:33:10 |
+|                 430 |                     2 | 2023-10-19 13:33:17 |
++---------------------+-----------------------+---------------------+
+```
+
