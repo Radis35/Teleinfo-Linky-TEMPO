@@ -85,10 +85,10 @@ sudo mysql
 ```
 
 ```
-mysql> CREATE DATABASE linky;
-mysql> CREATE USER 'user'@'localhost' IDENTIFIED BY 'motdepasse';
-mysql> GRANT ALL PRIVILEGES ON linky.* TO 'user'@'localhost';
-mysql> FLUSH PRIVILEGES;
+CREATE DATABASE linky;
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'motdepasse';
+GRANT ALL PRIVILEGES ON linky.* TO 'user'@'localhost';
+FLUSH PRIVILEGES;
 ```
 ```
 USE linky;
