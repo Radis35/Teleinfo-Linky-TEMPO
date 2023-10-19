@@ -13,7 +13,7 @@ temps=0
 DB_HOST = 'localhost'
 DB_USER = 'user'  # Remplacez par votre nom d'utilisateur
 DB_PASSWORD = 'password!'  # Remplacez par votre mot de passe
-DB_NAME = 'dbname'
+DB_NAME = 'linky' # Remplacer par le nom de la db
 print("DB_configuree")
 
 # Liste pour stocker les lignes d'une trame complète
