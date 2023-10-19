@@ -1,5 +1,5 @@
 # Teleinfo-Linky-TEMPO
-Un petit tuto et code python pour voir les données de la téléinformation transmises par le linky au traver d'un raspberry Pi Zero
+Un petit tuto et code python pour voir les données de la téléinformation transmises par le linky au travers d'un raspberry Pi Zero
 
 
 ## Prérequis matériel:
@@ -69,7 +69,7 @@ Pour quitter : Crtl+A puis Ctrl+X
 [Installer le serveur](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04-quickstart-fr)
 [Paramétrer les utilisateurs](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04-quickstart-fr)
 
-## Prérequis Pyhton :
+## Prérequis Python :
 Sur Raspberry Pi OS vous avez déjà la dernière version de Python3. Mais vous allez devoir installer plusieurs bilbliothèques (pyserial et pymsql):
 ```
 sudo pip install pyserial
@@ -102,7 +102,7 @@ CREATE TABLE mesure (
 );
 ```
 
-## configuration du programme :
+## Configuration du programme :
 
 Vous devez maintenant configuer les paramètres de votre base données dans le programme
 
@@ -153,6 +153,25 @@ Vous devriez voir apparaitre ceci :
 |                 430 |                     2 | 2023-10-19 13:33:17 |
 +---------------------+-----------------------+---------------------+
 ```
+## Créer et lancer un service
+Ici nous allons faire en sorte que le script Python se lance tout seul au démarrage.
+
+Pour cela vous devez copier le fichier `linky.service` (en ayant pris soin de le configurer en fonction de votre dossier de travail) dans le dossier `/etc/systemd/system'
+
+Ensuite il faut recharger le daemon, activer le service et le démarrer
+
+```
+sudo systemctl deamon-reload
+sudo systemctl enable linky
+sudo systemctl start linky
+```
+
+Vérifier ensuite que le service est bien lancer avec la commande : 
+```
+journalctl -u linky
+```
+
+
 ## Affichage dans Grafana
 
 Grafana est accessible depuis un navigateur web à l'adresse 
