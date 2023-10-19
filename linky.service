@@ -7,8 +7,8 @@ After=mariadb.service
 Type=simple
 User=root
 Group=root
-ExecStart=/usr/bin/python3 /home/radis/main.py
-WorkingDirectory=/home/radis/
+ExecStart=/usr/bin/python3 /home/user/linky.py
+WorkingDirectory=/home/user
 
 [Install]
 WantedBy=multi-user.target
