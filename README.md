@@ -11,6 +11,7 @@ Prérequis logiciel :
 - Grafana pour archi ARMv6 : https://grafana.com/grafana/download/10.1.2?platform=arm
 - Serveur MariaDB :
           - Installer le serveur : https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-               ubuntu-20-04-quickstart-fr
+  
           - Paramétrer les utilisateurs : https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-           on-ubuntu-20-04-quickstart-fr
 
 Prérequis Pyhton :
