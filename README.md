@@ -161,3 +161,5 @@ adresse_ip_du_rasp:3000
 ```
 
 je vous met un fichier de conf. JSON dans les fichiers pour avoir ce type de graphique (attention à la zone horaire, UTC ici)
+
+![Capture d'écran 2023-10-19 161803.png]
