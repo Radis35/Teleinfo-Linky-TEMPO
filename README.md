@@ -161,7 +161,7 @@ Pour cela vous devez copier le fichier `linky.service` (en ayant pris soin de le
 Ensuite il faut recharger le daemon, activer le service et le démarrer
 
 ```
-sudo systemctl deamon-reload
+sudo systemctl daemon-reload
 sudo systemctl enable linky
 sudo systemctl start linky
 ```
